@@ -13,9 +13,16 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/bulma": "^1.2.7",
+    "@nuxtjs/markdownit": "^1.2.9",
+    "contentful": "^7.14.3",
+    "dotenv": "^8.2.0",
     "nuxt": "^2.0.0"
+
   },
   "devDependencies": {
+    "node-sass": "^4.14.0",
+    "sass-loader": "^8.0.2",
     "babel-eslint": "^10.0.1",
     "eslint": "^4.19.1",
     "eslint-friendly-formatter": "^4.0.1",
