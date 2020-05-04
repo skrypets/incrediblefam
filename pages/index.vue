@@ -1,7 +1,7 @@
 <template>
   <main>
     <div class="container">
-      <h1 class="title">Paw Waves</h1>
+      <h1 class="title">POSTS</h1>
       <section class="topo-black" v-for="post in posts" :key="post.fields.slug">
         <!-- <div
           class="image"

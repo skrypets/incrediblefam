@@ -1,11 +1,4 @@
-import dotenv from "dotenv";
-dotenv.config();
-
-const contentful = require("contentful");
-const client = contentful.createClient({
-  space: process.env.CONTENTFUL_SPACE,
-  accessToken: process.env.CONTENTFUL_ACCESSTOKEN
-});
+require('dotenv').config()
 
 export default {
   mode: "universal",
@@ -60,6 +53,7 @@ export default {
     CONTENTFUL_ENVIRONMENT: process.env.CONTENTFUL_ENVIRONMENT
   },
   modules: ["@nuxtjs/markdownit"],
+  buildModules: ["@nuxtjs/dotenv"],
   markdownit: {
     injected: true
   },
