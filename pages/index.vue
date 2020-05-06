@@ -1,23 +1,21 @@
 <template>
   <main>
     <div class="container">
-      <h1 class="title">Paw Waves</h1>
-      <section class="topo-black" v-for="post in posts" :key="post.fields.slug">
-        <!-- <div
+      <section v-for="post in posts" :key="post.fields.slug">
+        <div
           class="image"
           :style="
             `background: url(https:${post.fields.heroImage.fields.file.url}) center center no-repeat`
           "
-        ></div>-->
+        ></div>
         <h2 class="title">
           <nuxt-link :to="post.fields.slug">{{ post.fields.title }}</nuxt-link>
         </h2>
-        <!-- <p class="author">By {{ post.fields.author.fields.name }}</p>
         <p class="description">
           {{ post.fields.description }}
-        <br />-->
-        <nuxt-link :to="post.fields.slug" class="more">Read more ⟶</nuxt-link>
-        <!-- </p> -->
+          <br />
+          <nuxt-link :to="post.fields.slug" class="more">Читати ⟶</nuxt-link>
+        </p>
       </section>
     </div>
   </main>
@@ -31,7 +29,7 @@ export default {
     }
   },
   head: {
-    title: "Paw Waves, Latest Posts"
+    title: "Incrediblefamily нові блог"
   }
 };
 </script>
@@ -44,6 +42,7 @@ section {
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   padding: 30px 0;
+  min-height: 250px;
   h2,
   p {
     margin-top: 0;
@@ -61,19 +60,13 @@ section {
 .title {
   grid-area: 1 / 3 / 2 / 6;
 }
-.author {
+.description {
   grid-area: 2 / 3 / 3 / 6;
 }
-.description {
-  grid-area: 3 / 3 / 4 / 6;
-}
+// .description {
+//   grid-area: 3 / 3 / 4 / 6;
+// }
 .more {
   color: #eee;
-}
-
-.topo-black {
-  background: url('../static/topo-bg-3-black.png') top center repeat-y;
-  background-size: 1480px;
-  background-color: #DDDEDA;
 }
 </style>
