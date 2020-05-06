@@ -1,9 +1,13 @@
 <template>
   <section>
-    <p class="back">
-      <nuxt-link exact to="/">⟵ Повернутися</nuxt-link>
-    </p>
-    <section
+    <div class="section columns is-centered">
+      <div class="column is-half">
+        <p class="back">
+          <nuxt-link exact to="/">⟵ Повернутися</nuxt-link>
+        </p>
+      </div>
+    </div>
+    <div
       class="hero is-medium is-dark is-bold"
       :style="
         `background-image: url(https:${post.fields.heroImage.fields.file.url})`
@@ -16,7 +20,7 @@
           <!-- <h2 class="subtitle">Hero subtitle</h2> -->
         </div>
       </div>
-    </section>
+    </div>
     <div class="post-author has-text-centered">
       <img
         class="avatar"
@@ -26,8 +30,11 @@
       <p class="author">автор: {{ post.fields.author.fields.fullName }}</p>
       <p class="published">{{ post.fields.publishDate | formatDate }}</p>
     </div>
-
-    <article class="container" v-html="$md.render(post.fields.body)"></article>
+    <div class="section columns is-centered">
+      <div class="column is-half">
+        <article class="content" v-html="$md.render(post.fields.body)"></article>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -56,10 +63,17 @@ export default {
 
 <style lang="scss" scoped>
 
+article::first-letter {
+  float: left;
+  font-size: 5em;
+  line-height: 0.8em;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 4px;
+}
+
 .post-author {
   bottom: 0;
-  font-weight: bold;
-   transition: 1s ease-in-out;
   img {
       width: 70px;
       border-radius: 50px;

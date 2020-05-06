@@ -15,9 +15,9 @@
   "dependencies": {
     "@nuxtjs/bulma": "^1.2.7",
     "@nuxtjs/markdownit": "^1.2.9",
+    "@nuxtjs/robots": "^2.4.2",
     "contentful": "^7.14.3",
-    "nuxt": "^2.0.0",
-    "vue-parallaxy": "^1.1.1"
+    "nuxt": "^2.0.0"
   },
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",

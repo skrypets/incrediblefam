@@ -54,10 +54,15 @@ export default {
     CONTENTFUL_ACCESSTOKEN: process.env.CONTENTFUL_ACCESSTOKEN,
     CONTENTFUL_ENVIRONMENT: process.env.CONTENTFUL_ENVIRONMENT
   },
-  modules: ["@nuxtjs/markdownit", "@nuxtjs/bulma"],
+  modules: ["@nuxtjs/robots", "@nuxtjs/markdownit", "@nuxtjs/bulma"],
   buildModules: ["@nuxtjs/dotenv", ['@nuxtjs/google-analytics', {
-    id: 'UA-12301-2'
+    id: 'UA-165695345-1'
   }]],
+  robots: () => {
+    return {
+      UserAgent: '*',
+    }
+  },
   markdownit: {
     injected: true
   },
