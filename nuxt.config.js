@@ -1,4 +1,6 @@
-require('dotenv').config()
+require("dotenv").config()
+
+const cfclient = require("./plugins/contentful");
 
 export default {
   mode: "universal",
@@ -32,7 +34,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ["~/assets/styles/main.scss"],
+  css: [{ src: 'bulma/bulma.sass', lang: 'sass' }, "~/assets/styles/main.scss"],
   render: {
     bundleRenderer: {
       shouldPreload: (file, type) => {
@@ -43,7 +45,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~/plugins/contentful", "~/plugins/posts"],
+  plugins: ["~/plugins/contentful", "~/plugins/posts", "~/plugins/filters"],
   /*
    ** Environment variables
    */
@@ -52,16 +54,18 @@ export default {
     CONTENTFUL_ACCESSTOKEN: process.env.CONTENTFUL_ACCESSTOKEN,
     CONTENTFUL_ENVIRONMENT: process.env.CONTENTFUL_ENVIRONMENT
   },
-  modules: ["@nuxtjs/markdownit"],
-  buildModules: ["@nuxtjs/dotenv"],
+  modules: ["@nuxtjs/markdownit", "@nuxtjs/bulma"],
+  buildModules: ["@nuxtjs/dotenv", ['@nuxtjs/google-analytics', {
+    id: 'UA-12301-2'
+  }]],
   markdownit: {
     injected: true
   },
   generate: {
     routes() {
       return Promise.all([
-        client.getEntries({
-          content_type: "blogPosts"
+        cfclient.getEntries({
+          content_type: "post"
         })
       ]).then(([blogEntries]) => {
         return [...blogEntries.items.map(entry => entry.fields.slug)];
