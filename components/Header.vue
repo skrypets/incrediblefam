@@ -1,9 +1,21 @@
 <template>
-  <div>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+  <header>
+    <nav class="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <!-- navbar items, navbar burger... -->
+        <a class="navbar-item" href="https://incrediblefam.com">
+          <img
+            src="/logo.png"
+            alt="Incredible fam: Блог про подорожі та життя"
+            width="200px"
+            height="64px"
+          />
+        </a>
+        <!-- <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>-->
       </div>
     </nav>
-  </div>
+  </header>
 </template>
