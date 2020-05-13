@@ -45,7 +45,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~/plugins/contentful", "~/plugins/posts", "~/plugins/filters"],
+  plugins: ["~/plugins/contentful", "~/plugins/posts", "~/plugins/filters", '~/plugins/photosphere.client'],
   /*
    ** Environment variables
    */
