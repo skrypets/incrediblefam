@@ -13,11 +13,13 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^13.4.0",
     "@nuxtjs/bulma": "^1.2.7",
     "@nuxtjs/markdownit": "^1.2.9",
     "@nuxtjs/robots": "^2.4.2",
     "contentful": "^7.14.3",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "photo-sphere-viewer": "^4.0.3"
   },
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
