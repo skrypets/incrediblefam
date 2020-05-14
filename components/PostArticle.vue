@@ -5,19 +5,28 @@
       <div class="is-centered">
         <p class="published">{{ post.publishDate | formatDate }}</p>
       </div>
-      <article class="content" v-html="$md.render(post.body)"></article>
-      <article class="content" v-html="richText"></article>
+
+      <!-- <article class="content" v-html="$md.render(post.body)"></article> -->
+      <!-- <article class="content" v-html="richText"></article> -->
+
+      <!-- <article class="content">
+        <RichTextRenderer :richText="this.post.richText" />
+      </article>-->
+
+      <SphereViewer />
+
       <nuxt-link exact to="/">⟵ Повернутися</nuxt-link>
     </div>
   </section>
 </template>
 <script>
-import PhotoSphere from './PhotoSphere';
-import helpers from '../helpers';
+import RichTextRenderer from './RichTextRenderer';
+import SphereViewer from './SphereViewer';
 
 export default {
   components: {
-    PhotoSphere
+     RichTextRenderer,
+     SphereViewer
   },
   props: ['post'],
   data () {
@@ -25,11 +34,7 @@ export default {
       postData: this.post
     }
   },
-  computed: {
-    richText() {
-      return helpers.richTextPasrser(this.post.richText);
-    },
-  }
+
 }
 </script>
 
