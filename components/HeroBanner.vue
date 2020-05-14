@@ -1,6 +1,6 @@
 <template>
   <section
-    class="hero is-medium is-fullheight-with-navbar"
+    class="hero is-medium"
     :style="
         `background-image: url(https:${postData.heroImage.fields.file.url})`
       "
