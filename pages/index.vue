@@ -33,6 +33,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-// 0 1px 4px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(0, 0, 0, 0.1)
 </style>

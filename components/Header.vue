@@ -5,7 +5,7 @@
         <router-link to="/">
           <img
             src="/logo.png"
-            alt="Incredible fam: Блог про подорожі та життя"
+            alt="Incrediblefam: Блог про пригоди та подорожі сім\'ї"
             width="200px"
             height="64px"
           />

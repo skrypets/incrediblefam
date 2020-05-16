@@ -1,26 +1,42 @@
 
 <template>
   <div>
-    <RichTextRenderer :document="richText" :nodeRenderers="renderNodes" />
+    <RichText :document="richText" :nodeRenderers="renderNodes()" />
   </div>
 </template>
 <script>
 import { BLOCKS } from "@contentful/rich-text-types";
-import RichTextRenderer from 'contentful-rich-text-vue-renderer';
+import RichText from 'contentful-rich-text-vue-renderer';
+import SphereViewer from './SphereViewer';
 
-const sphereEmbeddedEntry = (node, key, h) => {
-  return h('h1', { key: key, to: 'link to embedded entry' }, 'content for the <Link> component');
-};
+const customRenderFunction =  function(node, key, h) {
+  const { sys, fields } = node.data.target;
+  switch(sys.contentType.sys.id) {
+    case 'sphereImage':
+      return h('SphereViewer',
+      {
+        props: {
+          panoramas: fields.panoramas
+        }
+      }
+    );
+  }
+}
+
+const renderNode = {
+  [BLOCKS.EMBEDDED_ENTRY]: customRenderFunction
+}
 
 export default {
   components: {
-    RichTextRenderer
+    RichText,
+    SphereViewer
   },
   props: ['richText'],
   methods: {
     renderNodes() {
       return {
-        [BLOCKS.EMBEDDED_ENTRY]: sphereEmbeddedEntry,
+        [BLOCKS.EMBEDDED_ENTRY]: customRenderFunction
      }
     }
   }
