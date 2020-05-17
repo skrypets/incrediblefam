@@ -1,5 +1,5 @@
-// import richTextPasrser from './contentfulRichText';
+import richTextRenderers from './richTextRenderers';
 
-// export default {
-//   richTextPasrser
-// };
+export default {
+  ...richTextRenderers
+};

@@ -1,9 +1,7 @@
 <template>
   <section
     class="hero is-medium"
-    :style="
-        `background-image: url(https:${postData.heroImage.fields.file.url})`
-      "
+    :style="`background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https:${postData.heroImage.fields.file.url})`"
     :title="`${postData.heroImage.fields.title}`"
   >
     <div class="hero-body has-text-centered">
@@ -29,9 +27,14 @@ export default {
 .hero {
   background-attachment: fixed !important;
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
   background-size: 100% auto !important;
+  background: none;
   height: 300px !important;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+  );
+  background-repeat: no-repeat;
 }
 </style>

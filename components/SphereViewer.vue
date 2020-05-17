@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="card">
-      <div id="viewer" ref="sphere"></div>
+      <div id="viewer" ref="viewer"></div>
       <button
         :class="[isButtonHidden ? 'is-hidden' : '']"
         class="button is-dark"
@@ -17,16 +17,25 @@ import 'photo-sphere-viewer/dist/photo-sphere-viewer.css';
 export default {
   data() {
     return {
-      imgUrl: '//images.ctfassets.net/4ir8g0xtpeoo/1HRNeL9P5m5QMAJJ3oRdQZ/a97f3f54d4958b00351815aa02e62adc/PANO_20200509_104814.jpg',
       viewer: null,
       isButtonHidden: false,
     }
   },
+  props: {
+    panoramas: {
+      type: Array,
+      required: true,
+    }
+  },
+  computed: {
+    //caption: this.panoramas[0].fields.title + ' © Mykola Skrypets',
+  },
   mounted() {
     this.viewer = new Viewer({
-      // TODO: gyroscope and stereo view
-      container: this.$refs.sphere,
-      caption: 'Заповідник «Тустань» © Mykola Skrypets' ,
+      // TODO: create custom buttons to toggle through panoramas (pref iterator)
+      // TODO: investigate gyroscope and stereo view
+      container: this.$refs.viewer,
+      caption: this.panoramas[0].fields.title + ' © Mykola Skrypets',
       navbar: [
         'zoom',
         'caption',
@@ -46,7 +55,7 @@ export default {
   },
   methods: {
     loadPanorama() {
-      this.viewer.setPanorama(this.imgUrl).then(
+      this.viewer.setPanorama(this.panoramas[0].fields.file.url).then(
         this.isButtonHidden = !this.isButtonHidden
       );
     }

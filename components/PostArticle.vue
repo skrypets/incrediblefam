@@ -5,16 +5,9 @@
       <div class="is-centered">
         <p class="published">{{ post.publishDate | formatDate }}</p>
       </div>
-
-      <!-- <article class="content" v-html="$md.render(post.body)"></article> -->
-      <!-- <article class="content" v-html="richText"></article> -->
-
-      <!-- <article class="content">
+      <article class="content">
         <RichTextRenderer :richText="this.post.richText" />
-      </article>-->
-
-      <SphereViewer />
-
+      </article>
       <nuxt-link exact to="/">⟵ Повернутися</nuxt-link>
     </div>
   </section>

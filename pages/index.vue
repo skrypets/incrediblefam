@@ -1,6 +1,7 @@
 <template>
   <main>
     <section class="container" v-for="post in posts" :key="post.fields.slug">
+      {{post.sys.createdAt}}
       <div
         class="image"
         :style="
@@ -33,6 +34,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-// 0 1px 4px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(0, 0, 0, 0.1)
 </style>
