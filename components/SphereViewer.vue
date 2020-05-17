@@ -7,7 +7,6 @@
         class="button is-dark"
         @click.once="loadPanorama"
       >Завантажити панораму</button>
-      {{panoramas}}
     </div>
   </div>
 </template>
@@ -28,12 +27,15 @@ export default {
       required: true,
     }
   },
+  computed: {
+    //caption: this.panoramas[0].fields.title + ' © Mykola Skrypets',
+  },
   mounted() {
     this.viewer = new Viewer({
       // TODO: create custom buttons to toggle through panoramas (pref iterator)
       // TODO: investigate gyroscope and stereo view
       container: this.$refs.viewer,
-      caption: 'Заповідник «Тустань» © Mykola Skrypets' ,
+      caption: this.panoramas[0].fields.title + ' © Mykola Skrypets',
       navbar: [
         'zoom',
         'caption',

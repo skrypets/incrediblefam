@@ -1,6 +1,7 @@
 <template>
   <main>
     <section class="container" v-for="post in posts" :key="post.fields.slug">
+      {{post.sys.createdAt}}
       <div
         class="image"
         :style="
