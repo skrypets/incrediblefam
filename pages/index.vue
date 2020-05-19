@@ -1,8 +1,8 @@
 <template>
-  <main>
+  <section class="section">
     <div class="container is-fluid">
       <div class="columns is-desktop is-multiline is-centered">
-        <div class="column is-one-quarter" v-for="post in posts" :key="post.fields.slug">
+        <div class="column is-one-quarter" v-for="post in orderedPosts" :key="post.fields.slug">
           <nuxt-link :to="post.fields.slug" class="more">
             <div class="card">
               <div class="card-image">
@@ -34,23 +34,39 @@
         </div>
       </div>
     </div>
-  </main>
+  </section>
 </template>
 
 <script>
+import sortBy from 'lodash/sortBy';
 export default {
   computed: {
     posts() {
       return this.$store.state.posts;
+    },
+    orderedPosts: function () {
+      return sortBy(this.posts, function(p) {
+        return new Date(p.sys.createdAt);
+      })
     }
   },
   head: {
-    title: "Incrediblefamily блог"
+    title: "Incredible Family блог"
   }
 };
 </script>
 
 <style lang="scss" scoped>
+.column :hover {
+  img {
+    transform: scale(1.3);
+    transition: transform .2s;
+  }
+}
+.card-image {
+  overflow: hidden;
+}
+
 img {
   object-fit: cover;
 }
