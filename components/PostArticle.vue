@@ -2,10 +2,10 @@
   <section class="section columns is-centered">
     <div class="column is-half">
       <nuxt-link exact to="/">⟵ Повернутися</nuxt-link>
-      <div class="is-centered">
+      <div class="is-pulled-right">
         <p class="published">{{ post.publishDate | formatDate }}</p>
       </div>
-      <article class="content">
+      <article class="content has-text-justified">
         <RichTextRenderer :richText="this.post.richText" />
       </article>
       <nuxt-link exact to="/">⟵ Повернутися</nuxt-link>
@@ -39,5 +39,9 @@ article::first-letter {
   padding-top: 4px;
   padding-right: 8px;
   padding-left: 4px;
+}
+
+article {
+   margin-top: 2em;
 }
 </style>
