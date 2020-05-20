@@ -2,7 +2,7 @@
   <section
     class="hero is-medium"
     :style="`background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https:${postData.heroImage.fields.file.url})`"
-    :title="`${postData.heroImage.fields.title}`"
+    :title="`${postData.title}`"
   >
     <div class="hero-body has-text-centered">
       <div class="container">
@@ -30,7 +30,6 @@ export default {
   background-size: cover;
   background-size: 100% auto !important;
   background: none;
-  height: 300px !important;
   background-image: linear-gradient(
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
