@@ -10,12 +10,14 @@ import RichText from 'contentful-rich-text-vue-renderer';
 import richtextRenderers from '../helpers'
 import SphereViewer from './SphereViewer';
 import StravaEmbed from './StravaEmbed';
+import VLazyImage from "v-lazy-image";
 
 export default {
   components: {
     RichText,
     SphereViewer,
-    StravaEmbed
+    StravaEmbed,
+    VLazyImage
   },
   props: ['richText'],
   methods: {
@@ -45,6 +47,14 @@ a {
 a:hover {
   background-size: 4px 50px;
   color: #fff;
+}
+
+.v-lazy-image {
+  filter: blur(10px);
+  transition: filter 0.7s;
+}
+.v-lazy-image-loaded {
+  filter: blur(0);
 }
 
 </style>
