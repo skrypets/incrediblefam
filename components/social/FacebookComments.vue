@@ -40,6 +40,7 @@ export default {
       appId: '269268847518837',
       xfbml: true,
       version: 'v7.0',
+      autoLogAppEvents: true
     })
   }
 
