@@ -38,9 +38,9 @@ export default {
   mounted() {
     FB.init({
       appId: '269268847518837',
-      xfbml: true,
+      autoLogAppEvents: true,
       version: 'v7.0',
-      autoLogAppEvents: true
+      xfbml: true
     })
   }
 
