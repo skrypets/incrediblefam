@@ -14,7 +14,6 @@
             </div>
             <div class="card-content">
               <div class="content">
-                {{post.fields.richText.content | wordCount}}
                 <h3>{{ post.fields.title}}</h3>
                 {{ post.fields.description }}
                 <div>
