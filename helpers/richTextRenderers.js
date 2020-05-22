@@ -20,7 +20,8 @@ const customAssetRenderer = function (node, key, h) {
     case 'image/jpeg': return h('VLazyImage', {
       attrs: {
         src: fields.file.url,
-        title: fields.title
+        title: fields.title,
+        alt: fields.title
       }
     }
     );
