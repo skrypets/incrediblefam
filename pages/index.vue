@@ -14,6 +14,7 @@
             </div>
             <div class="card-content">
               <div class="content">
+                {{post.fields.richText.content | wordCount}}
                 <h3>{{ post.fields.title}}</h3>
                 {{ post.fields.description }}
                 <div>
@@ -59,6 +60,13 @@ export default {
   img {
     transform: scale(1.3);
     transition: transform .5s;
+  }
+}
+.card {
+  transition: transform .4s, box-shadow .4s;
+  &:hover {
+    transform: translate(0, -5px);
+    box-shadow: 0px -1px 100px 0px rgba(0, 0, 0, 0.1);
   }
 }
 .card-image {
