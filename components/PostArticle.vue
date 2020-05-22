@@ -1,25 +1,31 @@
 <template>
-  <section class="section columns is-centered">
-    <div class="column is-half">
-      <nuxt-link exact to="/">⟵ Повернутися</nuxt-link>
-      <div class="is-pulled-right">
-        <p class="published">{{ post.publishDate | formatDate }}</p>
+  <section class="section">
+    <div class="columns is-centered">
+      <div class="column is-half is-paddingless">
+        <nuxt-link exact to="/">⟵ Повернутися</nuxt-link>
+        <div class="is-pulled-right">
+          <p class="published">{{ post.publishDate | formatDate }}</p>
+        </div>
+        <article class="content has-text-justified">
+          <RichTextRenderer :richText="this.post.richText" />
+        </article>
+        <nuxt-link exact to="/">⟵ Повернутися</nuxt-link>
+        <FacebookComments />
       </div>
-      <article class="content has-text-justified">
-        <RichTextRenderer :richText="this.post.richText" />
-      </article>
-      <nuxt-link exact to="/">⟵ Повернутися</nuxt-link>
     </div>
   </section>
 </template>
 <script>
 import RichTextRenderer from './RichTextRenderer';
 import SphereViewer from './SphereViewer';
+import FacebookComments from '../components/social/FacebookComments'
 
 export default {
   components: {
      RichTextRenderer,
-     SphereViewer
+     SphereViewer,
+     FacebookComments
+
   },
   props: ['post'],
   data () {
