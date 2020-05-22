@@ -25,6 +25,9 @@ export default {
         href:
           "https://fonts.googleapis.com/css?family=Molle:400i|Baloo+Paaji+2:400,500&display=swap"
       }
+    ],
+    script: [
+      { src: 'https://connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v7.0' }
     ]
   },
   /*
