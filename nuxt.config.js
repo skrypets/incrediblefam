@@ -16,7 +16,15 @@ export default {
         hid: "description",
         name: "description",
         content: process.env.npm_package_description || ""
-      }
+      },
+      {
+        property: "fb:app_id",
+        content: "269268847518837"
+      },
+      {
+        property: "fb:admin",
+        content: "10158415621104189"
+      },
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
@@ -25,6 +33,9 @@ export default {
         href:
           "https://fonts.googleapis.com/css?family=Molle:400i|Baloo+Paaji+2:400,500&display=swap"
       }
+    ],
+    script: [
+      { src: 'https://connect.facebook.net/uk_UA/sdk.js' }
     ]
   },
   /*

@@ -8,7 +8,7 @@
               <figure class="image is-4by3">
                 <img
                   :src="`https:${post.fields.heroImage.fields.file.url}`"
-                  alt="Placeholder image"
+                  :alt="post.fields.heroImage.fields.title"
                 />
               </figure>
             </div>
