@@ -14,11 +14,8 @@ export default {
   name: "FacebookComments",
   computed: {
     href: function() {
-      return this.$route.query.page
+      return `http://incrediblefam.com/${this.$route.path}`;
     }
-  },
-  asyncData (context) {
-    console.log(context)
   },
   props: {
     colorscheme: {
@@ -38,6 +35,13 @@ export default {
       default: '100%' // Can be a pixel value '550'
     }
   },
+  mounted() {
+    FB.init({
+      appId: '269268847518837',
+      xfbml: true,
+      version: 'v7.0',
+    })
+  }
 
 }
 </script>

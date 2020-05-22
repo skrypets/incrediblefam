@@ -3,7 +3,6 @@
     <hero-banner :post="post.fields"></hero-banner>
     <post-author :author="post.fields.author.fields"></post-author>
     <post-article :post="post.fields"></post-article>
-    <facebook-comments />
   </div>
 </template>
 
@@ -11,13 +10,11 @@
 import HeroBanner from '../components/HeroBanner'
 import PostAuthor from '../components/PostAuthor'
 import PostArticle from '../components/PostArticle'
-import FacebookComments from '../components/social/FacebookComments'
 export default {
   components: {
     HeroBanner,
     PostAuthor,
-    PostArticle,
-    FacebookComments
+    PostArticle
   },
   data() {
     return {
