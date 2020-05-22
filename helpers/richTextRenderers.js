@@ -17,11 +17,10 @@ const customEntryRenderer = function (node, key, h) {
 const customAssetRenderer = function (node, key, h) {
   const { fields } = node.data.target;
   switch (fields.file.contentType) {
-    case 'image/jpeg': return h('img', {
+    case 'image/jpeg': return h('VLazyImage', {
       attrs: {
         src: fields.file.url,
-        title: fields.title,
-        loading: 'lazy'
+        title: fields.title
       }
     }
     );
