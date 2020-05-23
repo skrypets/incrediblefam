@@ -46,3 +46,9 @@ export default {
 
 }
 </script>
+
+<style lang="scss" scoped>
+.fb-comments {
+  margin-top: 20px;
+}
+</style>
