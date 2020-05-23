@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <div class="columns is-desktop is-multiline is-centered">
-      <div class="column is-one-quarter" v-for="post in sortedPosts" :key="post.fields.slug">
+      <div class="column is-one-quarter" v-for="post in orderedPosts" :key="post.fields.slug">
         <nuxt-link :to="post.fields.slug" class="more">
           <div class="card">
             <div class="card-image">
@@ -36,18 +36,17 @@
 </template>
 
 <script>
+import orderBy from 'lodash/orderBy';
 export default {
   computed: {
     posts () {
-      return this.$store.state.posts;
+      return this.$store.state.posts
     },
-    sortedPosts () {
-      return this.posts.slice().sort((a, b) => {
-        let dateA = new Date(a.fields.publishedAt);
-        let dateB = new Date(b.fields.publishedAt);
-        return dateA - dateB;
-      });
-    }
+    orderedPosts () {
+      return orderBy(this.posts, function(post) {
+        return new Date(post.fields.publishDate);
+      }, 'desc');
+    },
   },
   head: {
     title: "Incredible Family блог"
