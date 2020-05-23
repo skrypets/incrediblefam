@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <div class="columns is-desktop is-multiline is-centered">
-      <div class="column is-one-quarter" v-for="post in orderedPosts" :key="post.fields.slug">
+      <div class="column is-one-quarter" v-for="post in sortedPosts" :key="post.fields.slug">
         <nuxt-link :to="post.fields.slug" class="more">
           <div class="card">
             <div class="card-image">
@@ -17,7 +17,7 @@
                 <h3>{{ post.fields.title}}</h3>
                 {{ post.fields.description }}
                 <div>
-                  <time>{{post.sys.createdAt | formatDate}}</time>
+                  <time>{{post.fields.publishDate | formatDate}}</time>
                 </div>
                 <div class="tags">
                   <span
@@ -36,16 +36,17 @@
 </template>
 
 <script>
-import sortBy from 'lodash/sortBy';
 export default {
   computed: {
-    posts() {
+    posts () {
       return this.$store.state.posts;
     },
-    orderedPosts: function () {
-      return sortBy(this.posts, function(p) {
-        return new Date(p.sys.createdAt);
-      })
+    sortedPosts () {
+      return this.posts.slice().sort((a, b) => {
+        let dateA = new Date(a.fields.publishedAt);
+        let dateB = new Date(b.fields.publishedAt);
+        return dateA - dateB;
+      });
     }
   },
   head: {
