@@ -17,7 +17,7 @@
                 <h3>{{ post.fields.title}}</h3>
                 {{ post.fields.description }}
                 <div>
-                  <time>{{post.sys.createdAt | formatDate}}</time>
+                  <time>{{post.fields.publishDate | formatDate}}</time>
                 </div>
                 <div class="tags">
                   <span
@@ -36,17 +36,17 @@
 </template>
 
 <script>
-import sortBy from 'lodash/sortBy';
+import orderBy from 'lodash/orderBy';
 export default {
   computed: {
-    posts() {
-      return this.$store.state.posts;
+    posts () {
+      return this.$store.state.posts
     },
-    orderedPosts: function () {
-      return sortBy(this.posts, function(p) {
-        return new Date(p.sys.createdAt);
-      })
-    }
+    orderedPosts () {
+      return orderBy(this.posts, function(post) {
+        return new Date(post.fields.publishDate);
+      }, 'desc');
+    },
   },
   head: {
     title: "Incredible Family блог"
