@@ -69,7 +69,7 @@ export default {
     CONTENTFUL_ACCESSTOKEN: process.env.CONTENTFUL_ACCESSTOKEN,
     CONTENTFUL_ENVIRONMENT: process.env.CONTENTFUL_ENVIRONMENT
   },
-  modules: ["@nuxtjs/robots", "@nuxtjs/markdownit", "@nuxtjs/bulma"],
+  modules: ["@nuxtjs/robots", "@nuxtjs/markdownit", "@nuxtjs/bulma", "@nuxtjs/sitemap"],
   buildModules: ["@nuxtjs/dotenv", ['@nuxtjs/google-analytics', {
     id: 'UA-165695345-1'
   }]],
@@ -77,6 +77,9 @@ export default {
     return {
       UserAgent: '*',
     }
+  },
+  sitemap: {
+    hostname: 'https://incrediblefam.com'
   },
   markdownit: {
     injected: true
