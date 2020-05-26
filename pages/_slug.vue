@@ -30,8 +30,19 @@ export default {
     }
   },
   head() {
+    let canonical = `https://incrediblefam.com${this.$route.path}`
     return {
-      title: this.post.fields.title
+      title: this.post.fields.title,
+      link:[
+        { rel: 'canonical', href: canonical
+      }],
+      meta: [
+        {property: 'og:title', content: this.post.fields.title},
+        {property: 'og:description', content: this.post.fields.description},
+        {property: 'og:image', content: this.post.fields.heroImage.fields.file.url},
+        {property: 'og:url', content: canonical},
+        {property: 'og:locale', content: 'uk_UA'},
+      ]
     };
   }
 };
