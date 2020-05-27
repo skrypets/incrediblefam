@@ -30,7 +30,7 @@ export default {
     }
   },
   head() {
-    let canonical = `https://incrediblefam.com${this.$route.path}`
+    let canonical = `https://www.incrediblefam.com${this.$route.path}`
     return {
       title: this.post.fields.title,
       link:[
