@@ -79,7 +79,8 @@ export default {
     }
   },
   sitemap: {
-    hostname: 'https://incrediblefam.com'
+    hostname: 'https://www.incrediblefam.com',
+    trailingSlash: true
   },
   markdownit: {
     injected: true
@@ -91,8 +92,11 @@ export default {
           content_type: "post"
         })
       ]).then(([blogEntries]) => {
-        return [...blogEntries.items.map(entry => entry.fields.slug)];
+        return [...blogEntries.items.map(entry => entry.fields.slug + '/')];
       });
     }
-  }
+  },
+  router: {
+    trailingSlash: true,
+  },
 };
