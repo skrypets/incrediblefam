@@ -2,7 +2,7 @@
   <section class="section">
     <div class="columns is-desktop is-multiline is-centered">
       <div class="column is-one-quarter" v-for="post in orderedPosts" :key="post.fields.slug">
-        <nuxt-link :to="post.fields.slug" class="more">
+        <nuxt-link :to="post.fields.slug + '/'" class="more">
           <div class="card">
             <div class="card-image">
               <figure class="image is-4by3">
