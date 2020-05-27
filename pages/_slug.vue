@@ -30,7 +30,7 @@ export default {
     }
   },
   head() {
-    let canonical = `https://incrediblefam.com${this.$route.path}`
+    let canonical = `https://incrediblefam.com${this.$route.path}/`
     return {
       title: this.post.fields.title,
       link:[
@@ -39,8 +39,9 @@ export default {
       meta: [
         {property: 'og:title', content: this.post.fields.title},
         {property: 'og:description', content: this.post.fields.description},
-        {property: 'og:image', content: this.post.fields.heroImage.fields.file.url},
+        {property: 'og:image', content: `https:${this.post.fields.heroImage.fields.file.url}`},
         {property: 'og:url', content: canonical},
+        {property: 'og:type', content: 'article'},
         {property: 'og:locale', content: 'uk_UA'},
       ]
     };
