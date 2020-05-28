@@ -22,14 +22,14 @@ export default {
     alt: String,
     blurLevel: {
       type: Number,
-      default: 30
+      default: 20
     },
     duration: {
       type: Number,
-      default: 1000
+      default: 700
     }
   },
-  data: () => ({ rate: 0.5 }),
+  data: () => ({ rate: 1 }),
   computed: {
     deviation() {
       return this.blurLevel * this.rate;

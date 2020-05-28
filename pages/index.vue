@@ -4,9 +4,9 @@
       <div class="column is-one-quarter" v-for="post in orderedPosts" :key="post.fields.slug">
         <nuxt-link :to="post.fields.slug + '/'" class="more">
           <div class="card">
-            <div class="card-image">
+            <div class="card-image card-zoom">
               <figure class="image is-4by3">
-                <img
+                <SVGFilterImage
                   :src="`https:${post.fields.heroImage.fields.file.url}`"
                   :alt="post.fields.heroImage.fields.title"
                 />
@@ -37,7 +37,11 @@
 
 <script>
 import orderBy from 'lodash/orderBy';
+import SVGFilterImage from '../components/SVGFilterImage';
 export default {
+  components: {
+    SVGFilterImage
+  },
   computed: {
     posts () {
       return this.$store.state.posts
@@ -55,12 +59,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.column :hover {
-  img {
-    transform: scale(1.3);
-    transition: transform .5s;
-  }
-}
 .card {
   transition: transform .4s, box-shadow .4s;
   &:hover {
@@ -70,9 +68,22 @@ export default {
 }
 .card-image {
   overflow: hidden;
-}
 
-img {
-  object-fit: cover;
+}
+</style>
+<style lang="scss">
+.card-zoom {
+  img {
+    width: auto !important;
+    object-fit: cover;
+  }
+}
+.column :hover {
+  .card-zoom {
+    img {
+      transform: scale(1.3);
+      transition: transform .5s;
+    }
+  }
 }
 </style>
