@@ -74,7 +74,7 @@ export default {
 <style lang="scss">
 .card-zoom {
   img {
-    width: auto !important;
+    width: auto;
     object-fit: cover;
   }
 }
