@@ -17,10 +17,10 @@ const customEntryRenderer = function (node, key, h) {
 const customAssetRenderer = function (node, key, h) {
   const { fields } = node.data.target;
   switch (fields.file.contentType) {
-    case 'image/jpeg': return h('VLazyImage', {
+    case 'image/jpeg': return h('SVGFilterImage', {
       attrs: {
         src: fields.file.url,
-        title: fields.title
+        alt: fields.title
       }
     }
     );
