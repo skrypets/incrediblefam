@@ -4,7 +4,7 @@
       <div class="navbar-brand container">
         <router-link to="/">
           <img
-            src="/logo.png"
+            src="/logo.jpg"
             alt="Incrediblefam: Блог про пригоди та подорожі сім\'ї"
             width="200px"
             height="64px"
