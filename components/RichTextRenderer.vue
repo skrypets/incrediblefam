@@ -10,14 +10,14 @@ import RichText from 'contentful-rich-text-vue-renderer';
 import richtextRenderers from '../helpers'
 import SphereViewer from './SphereViewer';
 import StravaEmbed from './StravaEmbed';
-import SVGFilterImage from "./SVGFilterImage";
+import BlurImage from "./BlurImage";
 
 export default {
   components: {
     RichText,
     SphereViewer,
     StravaEmbed,
-    SVGFilterImage
+    BlurImage
   },
   props: ['richText'],
   methods: {

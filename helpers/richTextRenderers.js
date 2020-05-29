@@ -17,7 +17,7 @@ const customEntryRenderer = function (node, key, h) {
 const customAssetRenderer = function (node, key, h) {
   const { fields } = node.data.target;
   switch (fields.file.contentType) {
-    case 'image/jpeg': return h('SVGFilterImage', {
+    case 'image/jpeg': return h('BlurImage', {
       attrs: {
         src: fields.file.url,
         alt: fields.title
