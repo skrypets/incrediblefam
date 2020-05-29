@@ -26,7 +26,6 @@ export default {
       let post = this.$store.state.posts.filter(
         el => el.fields.slug === this.slug
       );
-      console.log(post[0])
       return post[0];
     }
   },
