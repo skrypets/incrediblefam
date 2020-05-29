@@ -37,13 +37,14 @@ export default {
         { rel: 'canonical', href: canonical
       }],
       meta: [
-        {property: 'og:type', content: 'article'},
-        {property: 'og:url', content: canonical},
-        {property: 'og:title', content: this.post.fields.title},
-        {property: 'og:description', content: this.post.fields.description},
-        {property: 'og:image', content: `https:${this.post.fields.heroImage.fields.file.url}`},
-        {property: 'og:image:alt', content: this.post.fields.heroImage.fields.title},
-        {property: 'og:locale', content: 'uk_UA'},
+        { name: 'description', content: this.post.fields.description },
+        { property: 'og:type', content: 'article' },
+        { property: 'og:url', content: canonical },
+        { property: 'og:title', content: this.post.fields.title },
+        { property: 'og:description', content: this.post.fields.description },
+        { property: 'og:image', content: `https:${this.post.fields.heroImage.fields.file.url}?w=1080` },
+        { property: 'og:image:alt', content: this.post.fields.heroImage.fields.title },
+        { property: 'og:locale', content: 'uk_UA' },
       ]
     };
   }

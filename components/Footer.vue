@@ -14,3 +14,12 @@
     </div>
   </footer>
 </template>
+
+<style lang="scss" scoped>
+a {
+  color: #3d3d4e;
+  &:hover {
+    color: #0d0c22;
+  }
+}
+</style>

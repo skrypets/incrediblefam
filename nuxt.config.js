@@ -27,7 +27,8 @@ export default {
       },
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "preconnect", href: "https://connect.facebook.net" }
     ],
     script: [
       { src: 'https://connect.facebook.net/uk_UA/sdk.js', async: true, defer: true }
