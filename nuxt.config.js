@@ -27,12 +27,7 @@ export default {
       },
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      {
-        rel: "stylesheet",
-        href:
-          "https://fonts.googleapis.com/css?family=Molle:400i|Baloo+Paaji+2:400,500&display=swap"
-      }
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
     ],
     script: [
       { src: 'https://connect.facebook.net/uk_UA/sdk.js', async: true, defer: true }
