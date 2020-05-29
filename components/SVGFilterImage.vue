@@ -7,7 +7,14 @@
         </filter>
       </defs>
     </svg>
-    <v-lazy-image :src="src" :src-placeholder="placeholder" :alt="alt" :title="alt" @load="animate"></v-lazy-image>
+    <v-lazy-image
+      :src="source"
+      :src-placeholder="placeholder"
+      :alt="alt"
+      :title="alt"
+      :thumb="thumb"
+      @load="animate"
+    ></v-lazy-image>
   </div>
 </template>
 
@@ -20,6 +27,7 @@ export default {
   props: {
     src: String,
     alt: String,
+    thumb: Boolean,
     blurLevel: {
       type: Number,
       default: 20
@@ -37,6 +45,9 @@ export default {
     placeholder() {
       return `${this.src}?w=40`;
     },
+    source() {
+      return this.thumb ? `${this.src}?w=666&h=500&fit=crop` : `${this.src}`;
+    }
 
   },
   methods: {

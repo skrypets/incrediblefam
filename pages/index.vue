@@ -7,6 +7,7 @@
             <div class="card-image card-zoom">
               <figure class="image is-4by3">
                 <SVGFilterImage
+                  thumb
                   :src="`https:${post.fields.heroImage.fields.file.url}`"
                   :alt="post.fields.heroImage.fields.title"
                 />

@@ -35,7 +35,7 @@ export default {
       }
     ],
     script: [
-      { src: 'https://connect.facebook.net/uk_UA/sdk.js' }
+      { src: 'https://connect.facebook.net/uk_UA/sdk.js', async: true, defer: true }
     ]
   },
   /*
