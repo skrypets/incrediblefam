@@ -53,7 +53,10 @@ export default {
     },
   },
   head: {
-    title: "Incredible Family блог"
+    title: "Incredible Family блог",
+    meta: [
+      { name: 'description', content: 'Incredible Family - це сімейний блог про цікаві подорожі та відпочинок' },
+    ]
   }
 };
 </script>
