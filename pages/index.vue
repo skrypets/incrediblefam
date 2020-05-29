@@ -6,8 +6,7 @@
           <div class="card">
             <div class="card-image card-zoom">
               <figure class="image is-4by3">
-                <SVGFilterImage
-                  thumb
+                <BlurImage
                   :src="`https:${post.fields.heroImage.fields.file.url}`"
                   :alt="post.fields.heroImage.fields.title"
                 />
@@ -38,10 +37,10 @@
 
 <script>
 import orderBy from 'lodash/orderBy';
-import SVGFilterImage from '../components/SVGFilterImage';
+import BlurImage from '../components/BlurImage';
 export default {
   components: {
-    SVGFilterImage
+    BlurImage
   },
   computed: {
     posts () {
