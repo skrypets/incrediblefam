@@ -5656,6 +5656,11 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
+nuxt-jsonld@^1.4.9:
+  version "1.4.9"
+  resolved "https://registry.yarnpkg.com/nuxt-jsonld/-/nuxt-jsonld-1.4.9.tgz#6e99b816f8f979c23a92aaf7858a19d7a2777a20"
+  integrity sha512-vQiVm9XH+g1uyeECQJiu4dFyjCB50n2qqS7DMFsY6whHW2iIl4y6kGqvqkDUg5/c3dy4aZT03nZYO00gAHaA4A==
+
 nuxt@^2.0.0:
   version "2.12.2"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-2.12.2.tgz#959baa919bfef4adcd9e88f84bc948a49a03edd8"

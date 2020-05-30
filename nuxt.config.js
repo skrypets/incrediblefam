@@ -56,6 +56,7 @@ export default {
     "~/plugins/contentful",
     "~/plugins/posts",
     "~/plugins/filters",
+    "~/plugins/jsonld"
   ],
   /*
    ** Environment variables
