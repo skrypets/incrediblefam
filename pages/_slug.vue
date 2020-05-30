@@ -27,19 +27,21 @@ export default {
         el => el.fields.slug === this.slug
       );
       return post[0];
+    },
+    canonical() {
+      return `https://www.incrediblefam.com${this.$route.path}`
     }
   },
   head() {
-    let canonical = `https://www.incrediblefam.com${this.$route.path}`
     return {
       title: this.post.fields.title,
       link:[
-        { rel: 'canonical', href: canonical
-      }],
+        { rel: 'canonical', href: this.canonical }
+      ],
       meta: [
         { name: 'description', content: this.post.fields.description },
         { property: 'og:type', content: 'article' },
-        { property: 'og:url', content: canonical },
+        { property: 'og:url', content: this.canonical },
         { property: 'og:title', content: this.post.fields.title },
         { property: 'og:description', content: this.post.fields.description },
         { property: 'og:image', content: `https:${this.post.fields.heroImage.fields.file.url}?w=1080` },
@@ -49,14 +51,28 @@ export default {
     };
   },
   jsonld() {
-    const { title, tags, heroImage, publishDate, richText } = this.post.fields;
+    const { title, tags, heroImage, publishDate, richText, author } = this.post.fields;
+    const dateModified  = this.post.sys.updatedAt;
     return {
       '@context': 'http://schema.org',
       '@type': 'BlogPosting',
+      "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": this.canonical
+      },
       'datePublished': publishDate,
       'headline': title,
       'articleBody': richText.content[0].content[0].value,
       'image': `https:${heroImage.fields.file.url}?w=1080`,
+      "author": {
+        "@type": "Person",
+        "name": author.fields.fullName,
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": author.fields.fullName,
+      },
+      'dateModified': dateModified,
       'keywords': tags.join(','),
     };
   }
