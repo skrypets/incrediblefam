@@ -47,6 +47,18 @@ export default {
         { property: 'og:locale', content: 'uk_UA' },
       ]
     };
+  },
+  jsonld() {
+    const { title, tags, heroImage, publishDate, richText } = this.post.fields;
+    return {
+      '@context': 'http://schema.org',
+      '@type': 'BlogPosting',
+      'datePublished': publishDate,
+      'headline': title,
+      'articleBody': richText.content[0].content[0].value,
+      'image': `https:${heroImage.fields.file.url}?w=1080`,
+      'keywords': tags.join(','),
+    };
   }
 };
 </script>

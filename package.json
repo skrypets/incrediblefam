@@ -22,6 +22,7 @@
     "contentful-rich-text-vue-renderer": "^1.1.5",
     "lodash": "^4.17.15",
     "nuxt": "^2.0.0",
+    "nuxt-jsonld": "^1.4.9",
     "photo-sphere-viewer": "^4.0.3",
     "v-lazy-image": "^1.4.0"
   },
