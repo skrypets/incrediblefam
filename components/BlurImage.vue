@@ -20,7 +20,7 @@ export default {
       return `${this.src}?w=1080`;
     },
     srcset() {
-      return `${this.src}?fm=webp&w=640 640w, ${this.src}?fm=webp&w=750 750w, ${this.src}?fm=webp&w=1080 1080w`
+      return `${this.src}?w=640 640w, ${this.src}?w=750 750w, ${this.src}?w=1080 1080w`
     }
 
   },
