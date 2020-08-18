@@ -20,7 +20,7 @@
     "@nuxtjs/sitemap": "^2.3.0",
     "contentful": "^7.14.3",
     "contentful-rich-text-vue-renderer": "^1.1.5",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "nuxt": "^2.0.0",
     "nuxt-jsonld": "^1.4.9",
     "photo-sphere-viewer": "^4.0.3",
